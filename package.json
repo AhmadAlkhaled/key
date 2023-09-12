@@ -5,7 +5,7 @@
   "scripts": {
     "start:dev": "concurrently \" nodemon ./Backend/server.js \" \"parcel watch ./client/src/index.html --public-url ./static/ \"  ",
     "build": "parcel build ./client/src/index.html --public-url ./static/ ",
-    "start": "  concurrently \" node ./Backend/server.js \" \"parcel watch ./client/src/index.html --public-url ./static/ \" "
+    "start": "  node ./Backend/server.js "
   },
   "repository": {
     "type": "git"
