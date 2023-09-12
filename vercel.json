@@ -1,7 +1,14 @@
 {
   "version": 2,
-  "name": "chat",
+  "name": "maps-meet",
   "builds": [
+    {
+      "src": "client/src/index.html",
+      "use": "@parcel",
+      "config": {
+        "publicUrl": "./static/"
+      }
+    },
     {
       "src": "Backend/server.js",
       "use": "@vercel/node"
@@ -13,15 +20,8 @@
       "dest": "Backend/server.js"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "client/build/$1"
+      "dest": "client/src/index.html"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
