@@ -4,7 +4,7 @@
   "builds": [
     {
       "src": "client/src/index.html",
-      "use": "@parcel",
+      "use": "parcel build",
       "config": {
         "publicUrl": "./static/"
       }
