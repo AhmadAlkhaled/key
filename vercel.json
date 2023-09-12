@@ -1,0 +1,36 @@
+{
+    "version": 2,
+    "name": "chat",
+    "builds": [
+      {
+        "src": "client/src/index.html",
+        "use": "@vercel/parcel",
+        "config": {
+          "publicUrl": "./static/"
+        }
+      },
+      {
+        "src": "Backend/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api(/.*)?",
+        "dest": "Backend/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "client/src/index.html"
+      }
+    ],
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+}
+  
